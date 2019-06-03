@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<h3> HOla! {{user.username.title}}</h3>
+<h5> Welcome to your workspace </h5>
+{% for blog in blogs %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href={% url "user_blogs"%}>{{ blog.author }}</a>
+      <small class="text-muted">{{ blog.date_posted }}</small>
+        <a class="mr-2" href={% url 'blog_delete' blog.id %}>Delete</a>
+        <a class="mr-2" href={% url 'blog_update' blog.id %}>Edit</a>
+    </div>
+    <h5><a class="article-title" href="#">{{ blog.title }}</a></h5>
+    <p>{{ blog.content }}</p>
+  </div>
+</article>
+{% endfor %}
+{% endblock content %}

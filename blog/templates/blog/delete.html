@@ -1,0 +1,22 @@
+{%  extends "blog/base.html" %}
+
+
+{% block content %}
+
+<div >
+  <form method="post" >
+    {% csrf_token %}
+    <fieldset >
+      <legend>
+        <h3> Delete Blog</h3>
+      </legend>
+      <h5>Hi {{user.username}}! Are you too sure to delete ?</h5>
+      </fieldset>
+      <div>
+      <button class="btn btn-outline-danger" type="submit">Yes</button>
+      <a class="btn btn-outline-secondary"  href={% url  "blog_home" %}>No</a>
+      </div>
+
+  </form>
+  </div>
+{%endblock %}
