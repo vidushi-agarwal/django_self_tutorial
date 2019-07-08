@@ -44,7 +44,7 @@ def delete(request,blog_id):
             messages.warning(request,f'You have deleted a blog')
             return redirect('user_blogs')
     else:
-        print("hi")
+        # print("hi")
         blog_form=DeleteBlog()
     return render(request,'blog/delete.html',{'blog_form':blog_form})
 

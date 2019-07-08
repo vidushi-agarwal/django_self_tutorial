@@ -1,11 +1,28 @@
 from django.shortcuts import render,redirect
-from . custom_form import CustomReg,UpdateReg,UpdateDp,RegisterDp
+from . custom_form import CustomReg,UpdateReg,UpdateDp,RegisterDp,Login_form
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 # Create your views here.
+
+
+def login(request):
+    if(request.method=="POST"):
+        form=Login_form(request.POST)
+        if(form.is_valid()):
+            username=form.cleaned_data.get("username")
+            password=form.cleaned_data.get("password")
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+   return HttpResponse("User is logged in")
+    if(request.method=="GET"):
+        form=Login_form()
+    return render(request,"user_specs/login_new.html",{"form":form})
+
 def sign_up(request):
     if(request.method=="POST"):
         my_form=CustomReg(request.POST)
