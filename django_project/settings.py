@@ -25,7 +25,7 @@ SECRET_KEY = 'i#dj7us8nwivkob5r(lk56rf!cc*f=!s(r45hhy$#!r$9ww3^%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["stormy-refuge-29936.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["floating-fortress-91971.herokuapp.com", "127.0.0.1"]
 
 
 
