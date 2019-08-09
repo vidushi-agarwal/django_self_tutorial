@@ -20,7 +20,7 @@ from blog import views as myviews
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
 urlpatterns = [
-    path('',myviews.home,name="home"),
+    path('',myviews.home,name="index"),
     path('admin/', admin.site.urls),
     path('blog/', include("blog.urls")),
     path('register/',views.sign_up,name="register"),
