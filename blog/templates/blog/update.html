@@ -8,7 +8,7 @@
     {% csrf_token %}
     <fieldset>
       <legend>
-        <h3> Hi {{user.username}}! Update Blog</h3>
+        <b> Hi {{user.username}}! Update Blog</b>
       </legend>
       {{blog_form|crispy}}
       </fieldset>
