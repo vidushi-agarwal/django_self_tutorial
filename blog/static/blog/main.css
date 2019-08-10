@@ -17,16 +17,16 @@ ul {
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #fff;
+  color: #007bff;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #007bff;
+  color: #fff;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
-  border: 1px solid #007bff;
+
 }
 
 
