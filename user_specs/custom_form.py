@@ -8,7 +8,7 @@ class Login_form(forms.Form):
     password=forms.CharField(max_length=10)
 
 class CustomReg(UserCreationForm):    #inheriting UserCreationForm
-    email=forms.EmailField()
+    email=forms.EmailField(max_length=20)
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
